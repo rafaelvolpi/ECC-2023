@@ -13,4 +13,4 @@ jobs:
         host: ${{ secrets.HOST }} 
         user: ${{ secrets.USER }}
         password: ${{ secrets.PASS }}
-        localDir: "dist"
+        remoteDir: "/public_html/wp-content/themes/ecc-sage"
