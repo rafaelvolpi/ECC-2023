@@ -1,0 +1,55 @@
+.wp-block-create-block-tabs {
+    ul.tab-labels {
+        @apply p-0 m-0 gap-px;
+        list-style: none;
+
+        .tab-label {
+            @apply flex items-center gap-2 bg-gray-300 text-lg uppercase font-secondary cursor-pointer transition-all border-transparent;
+            img {
+                @apply w-4 h-4;
+            }
+        }
+    }
+
+    &.columns-tab-layout {
+        ul.tab-labels {
+            @apply grid grid-flow-row md:grid-flow-col auto-cols-auto;
+            .tab-label {
+                @apply rounded-t-xl border-t-4 py-2 px-6;
+                img {
+                    @apply w-4 h-4;
+                }
+                &.active {
+                    @apply bg-gray-100 border-t-4 border-green-200;
+                }
+            }
+        }
+    }
+
+    &.rows-tab-layout {
+        @apply flex flex-row;
+        ul.tab-labels {
+            @apply grid-flow-row w-fit min-w-1/5;
+            .tab-label {
+                @apply rounded-l-xl border-l-4 py-3 px-3 pr-5 w-full min-w-max;
+                img {
+                    @apply w-4 h-4;
+                }
+        
+                &.active {
+                    @apply bg-gray-100 border-l-4 border-green-200;
+                }
+            }
+        }
+    }
+    
+    .tab-content {
+        @apply w-fit;
+        .tab-panel {
+            @apply hidden p-10 bg-gray-100;
+            &.active {
+                @apply block;
+            }
+        }
+    }
+}

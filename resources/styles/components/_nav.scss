@@ -1,0 +1,234 @@
+/*
+Navigation Component Styles
+*/
+
+.quick-navigation {
+    * {
+      @apply transition-opacity;
+    }
+    a {
+        @apply text-slate-900 uppercase font-secondary text-sm;
+    }
+    li {
+        @apply py-2 px-4;
+    }
+    ul#menu-menu-rapido {
+        @apply flex flex-row;
+        > li {
+            a {
+                @apply uppercase block px-2 h-full whitespace-nowrap;
+            }
+            @apply relative pr-6;
+            &::before {
+                @apply absolute top-1/2 right-0 -translate-y-1/2 px-2 -rotate-90 transition-all;
+                content: url('../images/svg/icon/caret.svg');
+            }
+            &:hover {
+                &::before {
+                    @apply rotate-0 transition-all;
+                }
+                ul {
+                    @apply opacity-100 left-auto z-50 mt-2;
+                }
+
+            }
+            > ul {
+                @apply absolute flex flex-col bg-yellow-100 py-2 opacity-0 left-[-999em] overflow-hidden;
+            }
+        }
+    }
+}
+
+/*
+
+PRIMARY MENU
+
+*/
+
+.primary-navigation {
+    * {
+        @apply transition-opacity font-secondary text-base;
+    }
+    ul {
+        @apply flex flex-row py-10;
+        > li {
+            @apply relative;
+            &.menu-item-has-children {
+                @apply pr-6;
+                &::before {
+                    @apply absolute top-1/2 right-0 -translate-y-1/2 px-4 -rotate-90 transition-all;
+                    content: url('../images/svg/icon/caret.svg');
+                }
+                &:hover::before {
+                    @apply rotate-0 transition-all;
+                }
+            }
+            a {
+                @apply uppercase block py-5 px-4 h-full whitespace-nowrap;
+            }
+            &:hover {
+                @apply bg-gray-100;
+                .caret-icon {
+                    @apply mt-2;
+                }
+                > ul {
+                    @apply opacity-100 left-auto z-50;
+                }
+            }
+            > ul {
+                @apply absolute grid grid-flow-row bg-gray-100 py-2 opacity-0 left-[-999em];
+                > li {
+                    @apply relative whitespace-nowrap;
+                    > a {
+                        @apply px-4 py-2 bg-transparent uppercase h-full flex justify-between items-center min-w-[15rem];
+                    }
+                    &:hover {
+                        @apply bg-white;
+                        .caret-icon {
+                            @apply opacity-100;
+                        }
+                        > ul {
+                            @apply opacity-100 left-40 z-50;
+                        }
+                    }
+                    > ul {
+                        @apply absolute grid grid-flow-row bg-gray-100 py-2 opacity-0 left-48 -mt-5;
+                        > li {
+                            @apply min-w-[13rem] relative;
+                            > a {
+                                @apply px-4 py-2 bg-transparent uppercase h-full flex justify-between items-center;
+                                .caret-icon {
+                                    @apply h-2 w-2 -rotate-90 -mt-0 opacity-0;
+                                }
+                            }
+                            &:hover {
+                                @apply bg-white;
+                                .caret-icon {
+                                    @apply opacity-100 z-50;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    li#menu-amb-virtuais {
+        @apply static;
+        > ul {
+            @apply opacity-0 left-[-999em];
+        }
+        &:hover > ul {
+            @apply left-0 top-auto grid grid-flow-col auto-cols-fr container py-0 px-0 opacity-100 py-5;
+            > li {
+                @apply p-4 block flex-col items-center justify-start text-center bg-transparent;
+                &:not(:last-child) {
+                    @apply border-r border-ecc-blue/20;
+                }
+                a {
+                    @apply btn h-auto whitespace-normal mt-5;
+                }
+                img {
+                    @apply w-full h-20 aspect-square object-contain object-center;
+                }
+                p {
+                    @apply pt-4 text-sm leading-tight whitespace-normal;
+                }
+            }
+        }
+    }
+}
+  
+/*
+
+FOOTER MENU
+
+*/
+  
+.footer-navigation {
+    @apply py-10;
+    > div > ul {
+      @apply flex flex-col lg:flex-row justify-between gap-x-10;
+      > li {
+        .caret-icon {
+          @apply hidden;
+        }
+        > ul.sub-menu {
+          @apply grid grid-flow-row py-2;
+          > li {
+            @apply min-w-[10rem] py-1;
+            ul {
+                @apply ml-4;
+                > li {
+                    @apply min-w-[10rem] py-1;
+                }
+            }
+          }
+        }
+        & > a {
+          @apply font-bold;
+        }
+        a {
+          @apply text-sm uppercase border-b border-transparent hover:border-white transition-all font-secondary;
+        }
+      }
+    }
+    .menu-item-112 {
+      display: none;
+    }
+  }
+  
+  /* HAMBURGER MENU */
+  
+  .hamburger {
+    cursor: pointer;
+    width: 48px;
+    height: 48px;
+    transition: all 0.25s;
+  }
+  
+  .hamburger__top-bun,
+  .hamburger__center-bun,
+  .hamburger__bottom-bun {
+    content: '';
+    position: absolute;
+    width: 24px;
+    height: 2px;
+    background: #000;
+    transform: rotate(0);
+    transition: all 0.5s;
+  }
+  
+  .hamburger:hover [class*='-bun'] {
+    background: #333;
+  }
+  
+  .hamburger__top-bun {
+    transform: translateY(-5px);
+  }
+  
+  .hamburger__center-bun {
+    transform: translateY(2px);
+  }
+  
+  .hamburger__bottom-bun {
+    transform: translateY(9px);
+  }
+  
+  .open {
+    transform: rotate(90deg);
+    transform: translateY(-1px);
+  }
+  
+  .open .hamburger__top-bun {
+    transform: rotate(45deg) translateY(0px);
+  }
+  
+  .open .hamburger__bottom-bun {
+    transform: rotate(-45deg) translateY(0px);
+  }
+  
+  .open .hamburger__center-bun {
+    opacity: 0;
+  }
+  

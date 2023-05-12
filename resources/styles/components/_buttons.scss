@@ -1,0 +1,26 @@
+@layer components {
+    .btn {
+        @apply inline-block justify-center no-underline font-secondary uppercase leading-tight rounded-full pt-2 pb-2.5 px-5 transition-all;
+    }
+    .btn-white {
+        @apply bg-white hover:text-white hover:bg-ecc-blue;
+    }
+
+    .btn-blue {
+        @apply text-white bg-ecc-blue hover:bg-indigo-200 hover:text-indigo-900;
+    }
+
+    .btn-sm {
+        @apply text-sm py-1 pt-1 pb-1.5 px-2;
+    }
+}
+
+/* Button block
+--------------------------------------------- */
+
+.wp-block-button__link {
+    @apply btn btn-blue;
+    &.has-ecc-blue-background-color {
+        @apply btn-blue;
+    }
+}

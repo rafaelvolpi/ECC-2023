@@ -1,0 +1,116 @@
+@-webkit-keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@-moz-keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@-o-keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@-webkit-keyframes fadeOut {
+    0% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+@-moz-keyframes fadeOut {
+    0% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+@-o-keyframes fadeOut {
+    0% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+@keyframes fadeOut {
+    0% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+.modal-body {
+    overflow: hidden;
+    position: relative;
+}
+
+.modal-body:before {
+    position: fixed;
+    display: block;
+    content: '';
+    top: 0px;
+    bottom: 0px;
+    right: 0px;
+    left: 0px;
+    background-color: rgba(0, 0, 0, 0.75);
+    z-index: 10;
+}
+
+.modal-body:before {
+    -webkit-animation: fadeIn 320ms ease;
+    -moz-animation: fadeIn 320ms ease;
+    -o-animation: fadeIn 320ms ease;
+    animation: fadeIn 320ms ease;
+    -webkit-transition: opacity ease 320ms;
+    -moz-transition: opacity ease 320ms;
+    -ms-transition: opacity ease 320ms;
+    -o-transition: opacity ease 320ms;
+    transition: opacity ease 320ms;
+}
+
+.modal-body.modal-fadeOut:before {
+    opacity: 0;
+}
+
+.modal {
+    -webkit-transition: all ease 0.01s;
+    -moz-transition: all ease 0.01s;
+    -ms-transition: all ease 0.01s;
+    -o-transition: all ease 0.01s;
+    transition: all ease 0.01s;
+    display: block;
+    opacity: 0;
+    height: 0;
+    position: fixed;
+    content: '';
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 50;
+    text-align: center;
+    overflow: hidden;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.modal.modal-visible {
+    opacity: 1;
+    height: auto;
+    bottom: 0;
+}
+
+.modal-inner {
+    -webkit-transition: all ease 320ms;
+    -moz-transition: all ease 320ms;
+    -ms-transition: all ease 320ms;
+    -o-transition: all ease 320ms;
+    transition: all ease 320ms;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    opacity: 0;
+}
+
+.modal-inner.modal-reveal {
+    opacity: 1;
+}

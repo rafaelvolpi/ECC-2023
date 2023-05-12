@@ -1,0 +1,40 @@
+html {
+    @apply font-primary font-normal;
+}
+
+h1,
+.heading-1 {
+    @apply font-medium font-primary text-6xl leading-none;
+}
+
+h2,
+.heading-2 {
+    @apply font-medium font-primary text-3xl leading-none;
+}
+
+h3,
+.heading-3 {
+    @apply font-medium font-primary text-2xl leading-none;
+}
+
+h4,
+.heading-4 {
+    @apply font-medium font-secondary text-base leading-none uppercase;
+}
+
+.alignright {
+    text-align: right;
+}.aligncenter {
+    text-align: center;
+}.alignleft {
+    text-align: left;
+}
+
+.main {
+    :is(h1, h2, h3, h4, h5):has(+p) {
+        @apply pb-6;
+    }
+    :is(p):has(+p) {
+        @apply pb-3;
+    }
+}

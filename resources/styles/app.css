@@ -1,0 +1,14 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600&family=Open+Sans:wght@400;500;600&display=swap');
+
+@import 'components/_glide.scss';
+@import 'components/_buttons.scss';
+@import 'components/_nav.scss';
+@import 'components/_elements.scss';
+@import 'components/_modal.scss';
+@import 'components/_tabs.scss';
+
+@import 'components/_text.scss';
