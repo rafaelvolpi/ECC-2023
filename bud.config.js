@@ -16,6 +16,7 @@ export default async (app) => {
     .entry({
       app: ['@scripts/app', '@styles/app'],
       editor: ['@scripts/editor', '@styles/editor'],
+      //   modal: ['@scripts/modal', '@styles/modal'],
     })
 
     /**

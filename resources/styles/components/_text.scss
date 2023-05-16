@@ -31,10 +31,17 @@ h4,
 }
 
 .main {
-    :is(h1, h2, h3, h4, h5):has(+p) {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    :is(p, h1, h2, h3, h4, h5):has(+p) {
         @apply pb-6;
     }
-    :is(p):has(+p) {
+    :is(p):has(+p),
+    :is(h2):has(+h2)
+    {
         @apply pb-3;
     }
 }

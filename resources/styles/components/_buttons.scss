@@ -1,6 +1,6 @@
 @layer components {
     .btn {
-        @apply inline-block justify-center no-underline font-secondary uppercase leading-tight rounded-full pt-2 pb-2.5 px-5 transition-all;
+        @apply inline-block justify-center no-underline font-secondary uppercase leading-tight rounded-full pt-2 pb-2.5 px-5 transition-all cursor-pointer;
     }
     .btn-white {
         @apply bg-white hover:text-white hover:bg-ecc-blue;

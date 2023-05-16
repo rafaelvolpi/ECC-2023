@@ -1,0 +1,17 @@
+.gform_wrapper {
+    input:not([disabled]):not([type="submit"]),
+    select,
+    textarea {
+        @apply w-full py-2 px-0 outline-none border-0 border-b border-gray-300 leading-none focus:border-0 focus:border-b focus:border-gray-600 placeholder:uppercase placeholder:text-ecc-blue/30 max-h-[5rem];
+    }
+
+    select {
+        padding-top: 0.95rem;
+        padding-bottom: 0.95rem;
+    }
+
+    input[type="submit"],
+    .submit-button button {
+        @apply btn btn-blue min-w-[14rem];
+    }
+}

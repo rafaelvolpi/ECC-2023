@@ -38,4 +38,5 @@ add_filter('wp_nav_menu_items', function ($nav, $args) {
 
 include_once('Filters/disable-comments.php');
 include_once('Filters/enable-svg.php');
+// include_once('Filters/keep-tags-on-classic-editor.php');
 include_once('Filters/disable-emojis.php');

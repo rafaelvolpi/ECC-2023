@@ -114,3 +114,7 @@
 .modal-inner.modal-reveal {
     opacity: 1;
 }
+
+div.block-processo-matricula {
+    @apply relative bg-red-100;
+}
