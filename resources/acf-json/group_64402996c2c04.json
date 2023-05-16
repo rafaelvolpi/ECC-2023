@@ -1,6 +1,6 @@
 {
     "key": "group_64402996c2c04",
-    "title": "Page Config",
+    "title": "Configurações",
     "fields": [
         {
             "key": "field_644029973251c",
@@ -21,6 +21,32 @@
             "ui_on_text": "",
             "ui_off_text": "",
             "ui": 1
+        },
+        {
+            "key": "field_6463c94d248d9",
+            "label": "Call to Action Flutuante",
+            "name": "floating_cta",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "social": "Social Media",
+                "visita": "Agende uma visita"
+            },
+            "default_value": false,
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": ""
         }
     ],
     "location": [
@@ -41,5 +67,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1681926687
+    "modified": 1684261294
 }
