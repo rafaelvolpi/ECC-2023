@@ -72,7 +72,6 @@
                         </li>
                     @elseif ($config['template'] === "parceiros")
                         <li class="glide__slide flex flex-col gap-6 justify-between items-center h-full">
-                            asdadadasd
                             <img
                                 src="{{ $slide['image']['sizes']['medium_large'] }}"
                                 alt="item.image.title"

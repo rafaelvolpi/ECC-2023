@@ -29,13 +29,14 @@ $_posts['featured'] = array_map('return_posts_array', get_posts(array(
 $_posts['default'] = array_map('return_posts_array', get_posts(array(
     'post_type' => 'post',
     'posts_per_page' => 4,
-    'post__not_in' => array($_posts['featured'][0]['id']),
+    'post__not_in' => isset($_posts['featured'][0]) ? array($_posts['featured'][0]['id']) : 0,
 )));
 
 @endphp
 
 <section id="{{ $block['id'] }}" class="block-{{ $block['slug'] }} relative">
     <ul class="grid grid-rows-4 md:grid-cols-5 gap-4 list-none">
+        @if(isset($_posts['featured'][0]))
         <li class="row-span-4 col-span-2 bg-white rounded-xl hover:bg-gray-100 transition-all">
             <a href="{{ $_posts['featured'][0]['link'] }}">
                 <img src="{{ $_posts['featured'][0]['image'] }}" class="w-full object-cover aspect-square rounded-t-lg" />
@@ -54,6 +55,11 @@ $_posts['default'] = array_map('return_posts_array', get_posts(array(
                 </div>
             </a>
         </li>
+        @else
+        <li class="row-span-4 col-span-2 bg-white rounded-xl p-10 text-center">
+            <b class="text-red">Você não possui nenhum post em destaque</b>
+        </li>
+        @endif
         @foreach ($_posts['default'] as $post)
         <li class="bg-white rounded-xl hover:bg-gray-100 transition-all col-span-3">
             <a href="{{ $post['link'] }}">
