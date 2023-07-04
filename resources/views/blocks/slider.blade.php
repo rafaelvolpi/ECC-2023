@@ -39,8 +39,8 @@
 
     $data_glide = json_encode( $data_glide );
 @endphp
-
-<section id="{{ $block['id'] }}" class="relative w-full clear-both">
+<div class="clear-both">
+<section id="{{ $block['id'] }}" class="relative">
     <div class="glide" data-glide='{{ $data_glide }}'>
         <div class="glide__track" data-glide-el="track">
             <ul class="glide__slides">
@@ -72,6 +72,7 @@
                         </li>
                     @elseif ($config['template'] === "parceiros")
                         <li class="glide__slide flex flex-col gap-6 justify-between items-center h-full">
+                            asdadadasd
                             <img
                                 src="{{ $slide['image']['sizes']['medium_large'] }}"
                                 alt="item.image.title"
@@ -109,7 +110,7 @@
         @endif
     </div>
 </section>
-
+</div>
 <style type="text/css">
   section#{{ $block['id'] }} {
     {{ $style }}

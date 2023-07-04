@@ -8,9 +8,10 @@ $header = array(
 
 <header class="z-50">
     <div class="bg-ecc-yellow">
-        <div class="container flex justify-end items-center">
+        <div class="container flex justify-end items-center relative">
             @if (has_nav_menu('quick_navigation'))
                 <nav class="quick-navigation" aria-label="{{ wp_get_nav_menu_name('quick_navigation') }}">
+                    <p>Acesso Rápido</p>
                     {!! wp_nav_menu([
                         'theme_location' => 'quick_navigation', 
                         'menu_class' => 'nav', 

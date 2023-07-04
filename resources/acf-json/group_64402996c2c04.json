@@ -37,10 +37,11 @@
                 "id": ""
             },
             "choices": {
+                "null": "Nenhum",
                 "social": "Social Media",
                 "visita": "Agende uma visita"
             },
-            "default_value": false,
+            "default_value": "null",
             "return_format": "value",
             "multiple": 0,
             "allow_null": 0,
@@ -67,5 +68,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1684261294
+    "modified": 1684334193
 }
