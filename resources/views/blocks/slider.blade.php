@@ -27,7 +27,7 @@
 
     $config = get_field('config');
     $slides = get_field('slide');
-    print_r($slides);
+    // print_r($slides);
 
     if ($config['autoplay']) {
         $data_glide['autoplay'] = $config['autoplay'] * 1000;
