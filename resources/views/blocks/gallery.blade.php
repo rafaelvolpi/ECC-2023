@@ -10,10 +10,45 @@
   EnqueueScript: scripts/js/fslightbox.js
 --}}
 
-<div class="grid grid-cols-5 gap-5">
-@php 
-foreach (get_field('images') as $img) {
-    echo '<a data-fslightbox="' . $block['id'] . '" href="' . $img['sizes']['large'] . '"><img src="' . $img['sizes']['medium'] . '" /></a>';
-} 
+@php
+    $slides['slide'] = get_field('images');
+
+    $config['navegacao'] = "arrows";
+
+    $data_glide['autoplay'] = 3 * 1000;        
+    $data_glide['loop'] = true;
+    $data_glide['perView'] = 3;
+
+    $data_glide = json_encode( $data_glide );
 @endphp
-</div>
+
+<section id="{{ $block['id'] }}" class="relative">
+    <div class="glide" data-glide='{{ $data_glide }}'>
+        <div class="glide__track" data-glide-el="track">
+            <ul class="glide__slides">
+                @foreach ($slides['slide'] as $k => $slide)
+                    <li class="glide__slide flex flex-col gap-6 justify-between items-center h-full">
+                        <a data-fslightbox="{{ $block['id'] }}" href="{{ $slide['sizes']['large'] }}"><img src="{{ $slide['sizes']['medium'] }}" /></a>
+                    </li>
+                @endforeach
+            </ul>
+        </div>
+
+        @if (count($slides['slide']) > 1)
+            @if (($config['navegacao'] == "bullets") || ($config['navegacao'] == "both"))
+            <div class="glide__bullets" data-glide-el="controls[nav]">
+                @foreach ($slides['slide'] as $k => $slide)
+                <button class="glide__bullet" data-glide-dir="={{ $k }}"></button>
+                @endforeach
+            </div>
+            @endif
+
+            @if (($config['navegacao'] == "arrows") || ($config['navegacao'] == "both"))
+            <div class="glide__arrows" data-glide-el="controls">
+                <button class="glide__arrow glide__arrow--left" data-glide-dir="&lt;"></button>
+                <button class="glide__arrow glide__arrow--right" data-glide-dir="&gt;"></button>
+            </div>
+            @endif
+        @endif
+    </div>
+</section>

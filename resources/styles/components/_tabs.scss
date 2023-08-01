@@ -44,7 +44,7 @@
     }
     
     .tab-content {
-        @apply w-fit;
+        @apply w-full;
         .tab-panel {
             @apply hidden p-10 bg-gray-100;
             &.active {

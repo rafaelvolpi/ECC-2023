@@ -55,6 +55,21 @@ module.exports = {
         '1/4': '25%',
         '1/5': '20%',
       },
+      gap: {
+        15: '3.75rem',
+        25: '6.25rem',
+        30: '7.5rem',
+      },
+      padding: {
+        15: '3.75rem',
+        25: '6.25rem',
+        30: '7.5rem',
+      },
+      margin: {
+        15: '3.75rem',
+        25: '6.25rem',
+        30: '7.5rem',
+      },
     },
     container: {
       padding: {
