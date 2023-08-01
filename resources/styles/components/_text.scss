@@ -37,11 +37,11 @@ h4,
     h4,
     h5,
     :is(p, h1, h2, h3, h4, h5):has(+p) {
-        @apply pb-6;
+        @apply leading-relaxed;
     }
     :is(p):has(+p),
     :is(h2):has(+h2)
     {
-        @apply pb-3;
+        @apply leading-relaxed;
     }
 }
