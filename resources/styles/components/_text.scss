@@ -44,4 +44,7 @@ h4,
     {
         @apply leading-relaxed;
     }
+    p:has(+p) {
+        margin-bottom: 1rem;
+    }
 }

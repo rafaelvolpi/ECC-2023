@@ -4,7 +4,7 @@
   Category: Components
   Icon: admin-comments
   Keywords: Carousel Slider
-  Mode: preview
+  Mode: auto
   SupportsAlign: false
   SupportsMode: true  
   SupportsColorText: false
