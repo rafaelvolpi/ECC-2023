@@ -14,7 +14,7 @@ domReady(async () => {
     const options = JSON.parse(
       components[i].getAttribute(COMPONENT_NAME) || '{}'
     );
-
+    console.log(components);
     let glide = new Glide(components[i], options);
 
     glide.mount();

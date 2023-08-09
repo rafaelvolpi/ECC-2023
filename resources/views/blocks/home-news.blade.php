@@ -1,5 +1,5 @@
 {{--
-  Title: Notícias
+  Title: Homepage: Notícias
   Description: Homepage News
   Category: formatting
   Icon: admin-comments
