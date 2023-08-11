@@ -49,7 +49,7 @@ $_posts['default'] = array_map('return_posts_array', get_posts(array(
                     <h3 class="text-ecc-blue mt-7">{{ $_posts['featured'][0]['title'] }}</h3>
                     <p class="text-sm no-style pt-3">{{ $_posts['featured'][0]['excerpt'] }}</p>
                     <p class="flex justify-end items-center">
-                        <img src="{{ get_template_directory_uri() }}/public/images/svg/icon/clock.svg" class="w-3 h-3 mr-1.5"></img>
+                        <img src="{{ get_template_directory_uri() }}/resources/images/svg/icon/clock.svg" class="w-3 h-3 mr-1.5"></img>
                         <span class="text-sm text-blue">{{ $_posts['featured'][0]['date_ago'] }}</span>
                     </p>
                 </div>
@@ -73,7 +73,7 @@ $_posts['default'] = array_map('return_posts_array', get_posts(array(
                         <h3 class="text-ecc-blue">{{ $post['title'] }}</h3>
                     </div>
                     <p class="flex justify-end items-center">
-                        <img src="{{ get_template_directory_uri() }}/public/images/svg/icon/clock.svg" class="w-3 h-3 mr-1.5"></img>
+                        <img src="{{ get_template_directory_uri() }}/resources/images/svg/icon/clock.svg" class="w-3 h-3 mr-1.5"></img>
                         <span class="text-sm text-blue">{{ $post['date_ago'] }}</span>
                     </p>
                 </div>

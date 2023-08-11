@@ -50,7 +50,7 @@ $_posts = array_map('return_posts_array', get_posts_from_category(get_field('cat
                         <h3 class="text-ecc-blue">{{ $post['title'] }}</h3>
                     </div>
                     <p class="flex justify-end items-center">
-                        <img src="{{ get_template_directory_uri() }}/public/images/svg/icon/clock.svg" class="w-3 h-3 mr-1.5"></img>
+                        <img src="{{ get_template_directory_uri() }}/resources/images/svg/icon/clock.svg" class="w-3 h-3 mr-1.5"></img>
                         <span class="text-sm text-blue">{{ $post['date_ago'] }}</span>
                     </p>
                 </div>

@@ -30,7 +30,7 @@ $footer = array(
               target="_blank"
               class="w-8 h-8 flex items-center justify-center bg-blue-500 p-2 rounded"
             >
-                <img src="{{ get_template_directory_uri() }}/public/images/svg/social/facebook-alt.svg" class="w-5 h-5" />
+                <img src="{{ get_template_directory_uri() }}/resources/images/svg/social/facebook-alt.svg" class="w-5 h-5" />
             </a>
           </li>
           <li class=" ">
@@ -39,7 +39,7 @@ $footer = array(
               target="_blank"
               class="block w-8 h-8 flex items-center justify-center bg-purple-500 p-2 rounded"
             >
-            <img src="{{ get_template_directory_uri() }}/public/images/svg/social/instagram.svg" class="w-5 h-5" />
+            <img src="{{ get_template_directory_uri() }}/resources/images/svg/social/instagram.svg" class="w-5 h-5" />
         </a>
           </li>
           <li>
@@ -48,7 +48,7 @@ $footer = array(
               target="_blank"
               class="w-8 h-8 flex items-center justify-center bg-red-500 p-2 rounded"
             >
-            <img src="{{ get_template_directory_uri() }}/public/images/svg/social/youtube.svg" class="w-5 h-5" />
+            <img src="{{ get_template_directory_uri() }}/resources/images/svg/social/youtube.svg" class="w-5 h-5" />
         </a>
           </li>
         </ul>

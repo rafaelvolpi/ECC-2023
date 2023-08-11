@@ -100,35 +100,3 @@ if (function_exists('acf_add_local_field_group')) {
 add_action('admin_enqueue_scripts', function () {
     wp_enqueue_media();
 });
-
-/*  Change WordPress Admin Login Logo */
-if (!function_exists('tf_wp_admin_login_logo')) :
-    function tf_wp_admin_login_logo()
-    { ?>
-        <style type="text/css">
-            body.login div#login h1 a {
-                background-image: url('<?php echo get_template_directory_uri() . "/resources/images/its/login-logo.svg"; ?>');
-            }
-        </style>
-<?php }
-    add_action('login_enqueue_scripts', 'tf_wp_admin_login_logo');
-endif;
-
-/*  Change WordPress Admin Login Logo Link URL  */
-if (!function_exists('tf_wp_admin_login_logo_url')) :
-    function tf_wp_admin_login_logo_url()
-    {
-        return home_url();
-    }
-    add_filter('login_headerurl', 'tf_wp_admin_login_logo_url');
-endif;
-
-/*  Change WordPress Admin Login Logo's Title  */
-if (!function_exists('tf_wp_admin_login_logo_title')) :
-    function tf_wp_admin_login_logo_title($headertext)
-    {
-        $headertext = esc_html__(get_bloginfo('name'), 'plugin-textdomain');
-        return $headertext;
-    }
-    add_filter('login_headertext', 'tf_wp_admin_login_logo_title');
-endif;

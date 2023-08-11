@@ -71,7 +71,7 @@
                         @endif
                         
                         @if (isset($evento['fields']['date_time']['end_date']))
-                            <img src="{{ get_template_directory_uri() }}/public/images/svg/icon/caret.svg" class="w-3 h-3 stroke-blue -rotate-90" />
+                            <img src="{{ get_template_directory_uri() }}/resources/images/svg/icon/caret.svg" class="w-3 h-3 stroke-blue -rotate-90" />
                             <div class="h-16 w-24 text-base uppercase rounded-lg border border-blue/20 bg-blue/5 flex flex-col items-center justify-center">
                                 <span class="{{ isset($evento['fields']['date_time']['end_hour']) ? 'border-b border-blue/40' : '' }}">
                                     {{ $evento['fields']['date_time']['end_date'] }}

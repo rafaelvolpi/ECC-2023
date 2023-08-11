@@ -3,13 +3,13 @@
 namespace App;
 
 // Check whether WordPress and ACF are available; bail if not.
-if (!function_exists('acf_register_block_type')) {
+if (! function_exists('acf_register_block_type')) {
     return;
 }
-if (!function_exists('add_filter')) {
+if (! function_exists('add_filter')) {
     return;
 }
-if (!function_exists('add_action')) {
+if (! function_exists('add_action')) {
     return;
 }
 
@@ -63,7 +63,6 @@ add_action('acf/init', function () {
                     'keywords' => 'Keywords',
                     'mode' => 'Mode',
                     'align' => 'Align',
-                    'alignWide' => 'AlignWide',
                     'post_types' => 'PostTypes',
                     'supports_align' => 'SupportsAlign',
                     'supports_anchor' => 'SupportsAnchor',
@@ -72,13 +71,9 @@ add_action('acf/init', function () {
                     'supports_align_text' => 'SupportsAlignText',
                     'supports_align_content' => 'SupportsAlignContent',
                     'supports_multiple' => 'SupportsMultiple',
-                    'supports_color_text' => 'SupportsColorText',
-                    'supports_color_bg' => 'SupportsColorBg',
-                    'supports_padding' => 'SupportsPadding',
-                    'supports_margin' => 'SupportsMargin',
-                    'enqueue_style' => 'EnqueueStyle',
-                    'enqueue_script' => 'EnqueueScript',
-                    'enqueue_assets' => 'EnqueueAssets',
+                    'enqueue_style'     => 'EnqueueStyle',
+                    'enqueue_script'    => 'EnqueueScript',
+                    'enqueue_assets'    => 'EnqueueAssets',
                 ]);
 
                 if (empty($file_headers['title'])) {
@@ -108,8 +103,7 @@ add_action('acf/init', function () {
                     'keywords' => explode(' ', $file_headers['keywords']),
                     'mode' => $file_headers['mode'],
                     'align' => $file_headers['align'],
-                    'alignWide' => $file_headers['alignWide'],
-                    'render_callback'  => __NAMESPACE__ . '\\sage_blocks_callback',
+                    'render_callback'  => __NAMESPACE__.'\\sage_blocks_callback',
                     'enqueue_style'   => $file_headers['enqueue_style'],
                     'enqueue_script'  => $file_headers['enqueue_script'],
                     'enqueue_assets'  => $file_headers['enqueue_assets'],
@@ -137,35 +131,17 @@ add_action('acf/init', function () {
 
                 // If the SupportsInnerBlocks header is set in the template, restrict this block mode feature
                 if (!empty($file_headers['supports_jsx'])) {
-                    $data['supports']['jsx'] = $file_headers['supports_jsx'] === 'true' ? true : false;
+                   $data['supports']['jsx'] = $file_headers['supports_jsx'] === 'true' ? true : false;
                 }
 
                 // If the SupportsAlignText header is set in the template, restrict this block mode feature
                 if (!empty($file_headers['supports_align_text'])) {
-                    $data['supports']['align_text'] = $file_headers['supports_align_text'] === 'true' ? true : false;
+                   $data['supports']['align_text'] = $file_headers['supports_align_text'] === 'true' ? true : false;
                 }
 
                 // If the SupportsAlignContent header is set in the template, restrict this block mode feature
                 if (!empty($file_headers['supports_align_text'])) {
-                    $data['supports']['align_content'] = $file_headers['supports_align_content'] === 'true' ? true : false;
-                }
-
-                // If the SupportsColorText header is set in the template, restrict this block mode feature
-                if (!empty($file_headers['supports_color_text'])) {
-                    $data['supports']['color']['text'] = $file_headers['supports_color_text'] === 'true' ? true : false;
-                }
-
-                // If the SupportsColorBg header is set in the template, restrict this block mode feature
-                if (!empty($file_headers['supports_color_bg'])) {
-                    $data['supports']['color']['background'] = $file_headers['supports_color_bg'] === 'true' ? true : false;
-                }
-
-                // If the SupportsSpacing header is set in the template, restrict this block mode feature
-                if (!empty($file_headers['supports_padding'])) {
-                    $data['supports']['spacing']['padding'] = $file_headers['supports_padding'] === 'true' ? true : false;
-                }
-                if (!empty($file_headers['supports_margin'])) {
-                    $data['supports']['spacing']['margin'] = $file_headers['supports_margin'] === 'true' ? true : false;
+                   $data['supports']['align_content'] = $file_headers['supports_align_content'] === 'true' ? true : false;
                 }
 
                 // If the SupportsMultiple header is set in the template, restrict this block multiple feature
@@ -174,7 +150,7 @@ add_action('acf/init', function () {
                 }
 
                 // Register the block with ACF
-                \acf_register_block_type(apply_filters("sage/blocks/$slug/register-data", $data));
+                \acf_register_block_type( apply_filters( "sage/blocks/$slug/register-data", $data ) );
             }
         }
     }
@@ -200,7 +176,7 @@ function sage_blocks_callback($block, $content = '', $is_preview = false, $post_
         $slug,
         $block['className'],
         $block['is_preview'] ? 'is-preview' : null,
-        'align' . $block['align']
+        'align'.$block['align']
     ];
 
     // Filter the block data.
@@ -221,6 +197,7 @@ function sage_blocks_callback($block, $content = '', $is_preview = false, $post_
                 // Use Sage's view() function to echo the block and populate it with data
                 echo \Roots\view($view, ['block' => $block]);
             }
+
         } else {
             try {
                 // Use Sage 9's template() function to echo the block and populate it with data
@@ -257,7 +234,7 @@ function removeBladeExtension($filename)
  */
 function checkAssetPath(&$path)
 {
-    if (preg_match("/^(css|styles|scripts)/", $path)) {
+    if (preg_match("/^(styles|scripts)/", $path)) {
         $path = isSage10() ? \Roots\asset($path)->uri() : \App\asset_path($path);
     }
 }

@@ -8,7 +8,7 @@
                 target="_blank"
                 class="w-8 h-8 flex items-center justify-center hover:bg-blue-500 bg-blue-500/50 p-2 rounded transition-all"
             >
-                <img src="{{ get_template_directory_uri() }}/public/images/svg/social/facebook-alt.svg" class="w-5 h-5 rotate-90" />
+                <img src="{{ get_template_directory_uri() }}/resources/images/svg/social/facebook-alt.svg" class="w-5 h-5 rotate-90" />
             </a>
         </li>
         <li>
@@ -17,7 +17,7 @@
                 target="_blank"
                 class="block w-8 h-8 flex items-center justify-center hover:bg-purple-500 bg-purple-500/50 p-2 rounded transition-all"
             >
-                <img src="{{ get_template_directory_uri() }}/public/images/svg/social/instagram.svg" class="w-5 h-5 rotate-90" />
+                <img src="{{ get_template_directory_uri() }}/resources/images/svg/social/instagram.svg" class="w-5 h-5 rotate-90" />
             </a>
         </li>
         <li>
@@ -26,7 +26,7 @@
                 target="_blank"
                 class="w-8 h-8 flex items-center justify-center hover:bg-red-500 bg-red-500/50 p-2 rounded transition-all"
             >
-                <img src="{{ get_template_directory_uri() }}/public/images/svg/social/youtube.svg" class="w-5 h-5 rotate-90" />
+                <img src="{{ get_template_directory_uri() }}/resources/images/svg/social/youtube.svg" class="w-5 h-5 rotate-90" />
             </a>
         </li>
     </ul>
