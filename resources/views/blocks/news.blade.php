@@ -19,14 +19,16 @@
 
 @php
 
-function get_posts_from_category($category_id) {
-    $args = array(
-        'post_type' => 'post',
-        'posts_per_page' => 4,
-        'cat' => $category_id,
-    );
-    $query = new WP_Query($args);
-    return $query->posts;
+if (!function_exists('get_posts_from_category')) {
+    function get_posts_from_category($category_id) {
+        $args = array(
+            'post_type' => 'post',
+            'posts_per_page' => 4,
+            'cat' => $category_id,
+        );
+        $query = new WP_Query($args);
+        return $query->posts;
+    }
 }
 
 $_posts = array_map('return_posts_array', get_posts_from_category(get_field('category')));
@@ -36,7 +38,7 @@ $_posts = array_map('return_posts_array', get_posts_from_category(get_field('cat
 @if (count($_posts) > 0)
 
 <section id="{{ $block['id'] }}" class="block-{{ $block['slug'] }} relative">
-    <ul class="grid grid-cols-1 gap-4 list-none">
+    <ul class="grid grid-cols-1 gap-4 list-none m-0 p-0">
         @foreach ($_posts as $post)
         <li class="bg-white rounded-xl hover:bg-gray-100 transition-all">
             <a href="{{ $post['link'] }}">
