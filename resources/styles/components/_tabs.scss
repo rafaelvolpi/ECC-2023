@@ -47,7 +47,7 @@
     .tab-content {
         @apply w-full;
         .tab-panel {
-            @apply hidden p-10 bg-gray-100;
+            @apply hidden p-10 bg-gray-100 h-full;
             &.active {
                 @apply block;
             }
