@@ -45,7 +45,6 @@
 
 
 <section id="{{ $block['id'] }}">
-    {{-- <pre class="text-xs">{{ print_r( $evento ) }}</pre> --}}
     <div class="glide" data-glide='{
         "loop": true,
         "perView": 4
