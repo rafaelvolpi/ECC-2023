@@ -11,6 +11,18 @@ domReady(() => {
     name: 'outline',
     label: 'Outline',
   });
+  registerBlockStyle('core/table', {
+    name: 'laranja',
+    label: 'Laranja',
+  });
+  registerBlockStyle('core/table', {
+    name: 'verde',
+    label: 'Verde',
+  });
+  registerBlockStyle('core/table', {
+    name: 'azul',
+    label: 'Azul',
+  });
   new Glide('.glide', { autoplay: 3000 }).mount();
 
   wp.blocks.unregisterBlockStyle('core/button', 'default');

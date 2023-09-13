@@ -5,17 +5,17 @@
       "js/app.1eac26.js"
     ],
     "css": [
-      "css/app.2799d6.css"
+      "css/app.c0ad7a.css"
     ],
     "dependencies": []
   },
   "editor": {
     "js": [
       "js/runtime.01bfc1.js",
-      "js/editor.669a0e.js"
+      "js/editor.abeed3.js"
     ],
     "css": [
-      "css/editor.7b4843.css"
+      "css/editor.f95d08.css"
     ],
     "dependencies": [
       "wp-blocks"

@@ -10,6 +10,7 @@
 @import 'components/_elements.scss';
 @import 'components/_modal.scss';
 @import 'components/_tabs.scss';
+@import 'components/_table.scss';
 
 @import 'components/_text.scss';
 @import 'components/_form.scss';

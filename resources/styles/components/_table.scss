@@ -1,0 +1,47 @@
+.wp-block-table {
+    &.is-style-laranja {
+        table {
+            thead th {
+                @apply bg-orange-500 text-white border-black;
+            }
+            tbody tr:nth-child(even) {
+                @apply bg-orange-100;
+            }
+            tbody tr:nth-child(odd) {
+                @apply bg-white;
+            }
+        }
+    }
+
+        &.is-style-verde {
+            table {
+                thead th {
+                    @apply bg-emerald-600 text-white border-black;
+                }
+    
+                tbody tr:nth-child(even) {
+                    @apply bg-emerald-100;
+                }
+    
+                tbody tr:nth-child(odd) {
+                    @apply bg-white;
+                }
+            }
+        }
+
+        &.is-style-azul {
+            table {
+                thead th {
+                    @apply bg-sky-600 text-white border-black;
+                }
+    
+                tbody tr:nth-child(even) {
+                    @apply bg-sky-100;
+                }
+    
+                tbody tr:nth-child(odd) {
+                    @apply bg-white;
+                }
+            }
+        }
+}
