@@ -113,7 +113,7 @@
                     "label": "Conteúdo",
                     "name": "conteudo",
                     "aria-label": "",
-                    "type": "textarea",
+                    "type": "wysiwyg",
                     "instructions": "",
                     "required": 1,
                     "conditional_logic": 0,
@@ -123,10 +123,10 @@
                         "id": ""
                     },
                     "default_value": "",
-                    "maxlength": "",
-                    "rows": 3,
-                    "placeholder": "",
-                    "new_lines": "",
+                    "tabs": "all",
+                    "toolbar": "basic",
+                    "media_upload": 0,
+                    "delay": 0,
                     "parent_repeater": "field_65c93e8514a60"
                 }
             ]
@@ -150,5 +150,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1707689622
+    "modified": 1709214428
 }
