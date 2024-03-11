@@ -62,9 +62,15 @@
                             <div class="hidden sm:flex w-full bg-gray-200 h-0.5"></div>
                         </div>
                         <div class="flex flex-col gap-2">
-                            <time class="block text-sm text-gray-400">{{ $item['data'] }}</time>
+                            @if ($item['data'])
+                                <time class="block text-sm text-gray-400">{{ $item['data'] }}</time>
+                            @endif
+                            @if ($item['imagem'])
+                                <img src="{{ $item['imagem']['url'] }}"
+                                    class="w-full aspect-video object-cover rounded-lg">
+                            @endif
                             <h3 class="text-lg font-semibold text-ecc-blue">{{ $item['titulo'] }}</h3>
-                            <p class="text-base text-wrap font-normal text-gray-500">{{ $item['conteudo'] }}</p>
+                            <p class="text-base text-wrap font-normal text-gray-500">{!! preg_replace('%<p(.*?)>|</p>%s', '', $item['conteudo']) !!}</p>
                         </div>
                     </li>
                 @endforeach
